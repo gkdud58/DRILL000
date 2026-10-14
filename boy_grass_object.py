@@ -28,7 +28,8 @@ class Ball:
         self.y += speed
 
     def draw(self):
-        self.image.clip_draw(self.frame * 100, 0, 100, 100, self.x, self.y)
+        size = random.randint(20, 100)
+        self.image.clip_draw(self.frame * size, 0, size, size, self.x, self.y)
 
 class Boy:
     def __init__(self) :
