@@ -25,6 +25,8 @@ class Ball:
     def update(self):
         speed = random.randint(1, 15)
         self.frame = 0
+        if self.y > 550:
+            self.y -= 100
         self.y += speed
 
     def draw(self):
