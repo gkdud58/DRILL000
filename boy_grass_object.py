@@ -82,7 +82,7 @@ def reset_world():
 
     # 팀을 생성, wolrd리스트에 추가
     running = True
-    balls = [Ball() for i in range(10)]
+    balls = [Ball() for i in range(20)]
     world += balls
     team = [Boy() for i in range(10)]
     world += team
