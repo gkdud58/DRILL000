@@ -15,6 +15,18 @@ class Grass:
 
     def update(self): pass
 
+class Ball:
+    def __init__(self) :
+        self.x, self.y = random.randint(100, 700), 90
+        self.frame = 0
+        self.image = load_image('run_animation.png')
+
+    def update(self):
+        self.frame = random.randint(0, 7)
+        self.x += 5
+
+    def draw(self):
+        self.image.clip_draw(self.frame * 100, 0, 100, 100, self.x, self.y)
 
 class Boy:
     def __init__(self) :
@@ -50,6 +62,7 @@ def reset_world():
     global running
     global grass
     global team
+    global balls
     global world
 
     #world
@@ -64,6 +77,8 @@ def reset_world():
 
     # 팀을 생성, wolrd리스트에 추가
     running = True
+    balls = [Ball() for i in range(10)]
+    world += balls
     team = [Boy() for i in range(10)]
     world += team
 
