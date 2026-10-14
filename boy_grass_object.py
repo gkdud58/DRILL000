@@ -19,7 +19,7 @@ class Ball:
     def __init__(self) :
         self.x, self.y = random.randint(100, 700), 90
         self.frame = 0
-        self.image = load_image('run_animation.png')
+        self.image = load_image('ball21x21.png')
 
     def update(self):
         self.frame = random.randint(0, 7)
